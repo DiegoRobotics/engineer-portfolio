@@ -4,12 +4,12 @@ A modern, static portfolio website built with Next.js 14, showcasing engineering
 
 ## Features
 
-- 📝 MDX-based project content with frontmatter metadata
-- 🏷️ Tag-based filtering system
-- 🖼️ Image gallery support for project showcases
-- 📱 Responsive design with Tailwind CSS
-- ⚡ Static site generation for optimal performance
-- ✅ Comprehensive test suite with property-based testing
+- MDX-based project content with frontmatter metadata
+- Tag-based filtering system
+- Image gallery support for project showcases
+- Responsive design with Tailwind CSS
+- Static site generation for optimal performance
+- Comprehensive test suite with property-based testing
 
 ## Tech Stack
 
