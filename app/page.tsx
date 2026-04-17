@@ -16,7 +16,7 @@ export default async function Home() {
           {/* Profile Picture */}
           <div className="flex-shrink-0">
             <Image
-              src="/images/profile.png"
+              src="/images/profile.PNG"
               alt="Diego Morales"
               width={200}
               height={200}
