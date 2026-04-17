@@ -1,5 +1,6 @@
 import { getAllProjects } from '@/lib/projects';
 import FeaturedProjectCard from '@/components/FeaturedProjectCard';
+import Image from 'next/image';
 
 export default async function Home() {
   const projects = await getAllProjects();
@@ -11,9 +12,26 @@ export default async function Home() {
     <main className="container mx-auto px-6 lg:px-12">
       {/* Hero Section */}
       <section className="py-12 lg:py-16 animate-fade-in">
-        <h1 className="text-4xl lg:text-5xl font-bold font-serif text-neutral-800">
-          Diego Morales&apos; Engineering Projects
-        </h1>
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          {/* Profile Picture */}
+          <div className="flex-shrink-0">
+            <Image
+              src="/images/profile.png"
+              alt="Diego Morales"
+              width={200}
+              height={200}
+              className="rounded-full object-cover shadow-lg"
+              priority
+            />
+          </div>
+          
+          {/* Title */}
+          <div>
+            <h1 className="text-4xl lg:text-5xl font-bold font-serif text-neutral-800">
+              Diego Morales&apos; Engineering Projects
+            </h1>
+          </div>
+        </div>
       </section>
 
       {/* Featured Projects Section */}
