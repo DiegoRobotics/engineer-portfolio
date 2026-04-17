@@ -1,0 +1,46 @@
+---
+title: Fluid Dynamics Simulator
+description: A GPU-accelerated 2D fluid dynamics simulation using the Navier-Stokes equations, visualized in real time.
+date: 2023-11-20
+status: In Progress
+tags:
+  - simulation
+  - software
+  - graphics
+thumbnail: /images/fluid-sim-thumb.jpg
+images:
+  - /images/fluid-sim-1.jpg
+  - /images/fluid-sim-2.jpg
+  - /images/fluid-sim-3.jpg
+links:
+  - label: Live Demo
+    url: https://yourhandle.github.io/fluid-sim
+  - label: Source Code
+    url: https://github.com/yourhandle/fluid-sim
+documents:
+  - label: Algorithm Notes
+    file: /docs/fluid-sim-notes.pdf
+---
+
+## Overview
+
+A real-time 2D fluid dynamics simulator that solves the incompressible Navier-Stokes equations on the GPU using WebGL compute shaders.
+
+## Motivation
+
+I wanted to understand the mathematics behind fluid simulation and explore GPU programming techniques for scientific computing.
+
+## Implementation
+
+The simulation uses a staggered MAC grid and a pressure projection method to enforce incompressibility. The entire solver runs on the GPU via WebGL 2.0.
+
+### Performance
+
+- 512×512 grid at 60 FPS on a mid-range GPU
+- Pressure solver converges in ~20 Jacobi iterations per frame
+
+## Future Work
+
+- Add 3D support using WebGPU
+- Implement adaptive time-stepping
+- Add particle-based visualization
