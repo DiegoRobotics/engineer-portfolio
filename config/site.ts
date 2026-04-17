@@ -16,9 +16,9 @@ export const siteConfig: SiteConfig = {
   bioSummary:
     'A passionate engineer who builds things across software, hardware, and everything in between.',
   contact: {
-    github: 'https://github.com/yourhandle',
-    linkedin: 'https://linkedin.com/in/yourhandle',
-    email: 'you@example.com',
+    email: 'diegoamr202003@gmail.com',
+    github: 'https://github.com/DiegoRobotics',
+    linkedin: 'https://www.linkedin.com/in/diegoalejandromorales',
   },
 };
 
