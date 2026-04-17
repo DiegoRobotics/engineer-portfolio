@@ -1,14 +1,44 @@
-import { getAllProjects, getAllTags } from '@/lib/projects';
-import HomeClient from '@/components/HomeClient';
+import { getAllProjects } from '@/lib/projects';
+import FeaturedProjectCard from '@/components/FeaturedProjectCard';
 
 export default async function Home() {
   const projects = await getAllProjects();
-  const tags = await getAllTags();
+  
+  // Get 3-6 featured projects (most recent)
+  const featuredProjects = projects.slice(0, 6);
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8">Projects</h1>
-      <HomeClient projects={projects} tags={tags} />
+    <main className="container mx-auto px-6 lg:px-12">
+      {/* Hero Section */}
+      <section className="py-12 lg:py-16 animate-fade-in">
+        <h1 className="text-4xl lg:text-5xl font-bold font-serif text-neutral-800">
+          Diego Morales&apos; Engineering Projects
+        </h1>
+      </section>
+
+      {/* Featured Projects Section */}
+      <section className="pb-12">
+        {featuredProjects.length === 0 ? (
+          <p className="text-center text-neutral-600 py-8">
+            No projects available
+          </p>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featuredProjects.map((project, index) => (
+              <div
+                key={project.slug}
+                className="animate-fade-in"
+                style={{
+                  animationDelay: `${index * 100}ms`,
+                  animationFillMode: 'backwards'
+                }}
+              >
+                <FeaturedProjectCard project={project} />
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
     </main>
   );
 }

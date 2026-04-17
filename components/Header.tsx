@@ -8,20 +8,20 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="border-b border-gray-200 bg-white">
-      <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-        <nav className="flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold text-gray-900">
+    <header className="sticky top-0 z-50 border-b border-neutral-200 bg-neutral-50">
+      <div className="mx-auto max-w-container px-6 lg:px-12">
+        <nav className="flex h-16 lg:h-18 items-center justify-between">
+          <Link href="/" className="text-xl font-bold text-neutral-900">
             {siteConfig.title}
           </Link>
           <ul className="flex gap-6">
             <li>
               <Link
                 href="/"
-                className={`text-sm font-medium transition-colors hover:text-gray-900 ${
+                className={`text-sm font-medium transition-colors duration-200 ease-in-out hover:text-neutral-900 ${
                   pathname === '/'
-                    ? 'text-gray-900 underline decoration-2 underline-offset-4'
-                    : 'text-gray-600'
+                    ? 'text-neutral-900 underline decoration-2 underline-offset-4'
+                    : 'text-neutral-600'
                 }`}
               >
                 Home
@@ -29,11 +29,23 @@ export default function Header() {
             </li>
             <li>
               <Link
+                href="/projects"
+                className={`text-sm font-medium transition-colors duration-200 ease-in-out hover:text-neutral-900 ${
+                  pathname === '/projects' || pathname?.startsWith('/projects/')
+                    ? 'text-neutral-900 underline decoration-2 underline-offset-4'
+                    : 'text-neutral-600'
+                }`}
+              >
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/about"
-                className={`text-sm font-medium transition-colors hover:text-gray-900 ${
+                className={`text-sm font-medium transition-colors duration-200 ease-in-out hover:text-neutral-900 ${
                   pathname === '/about'
-                    ? 'text-gray-900 underline decoration-2 underline-offset-4'
-                    : 'text-gray-600'
+                    ? 'text-neutral-900 underline decoration-2 underline-offset-4'
+                    : 'text-neutral-600'
                 }`}
               >
                 About

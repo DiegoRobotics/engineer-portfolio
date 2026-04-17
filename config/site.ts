@@ -11,8 +11,8 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  title: 'My Portfolio',
-  engineerName: 'Your Name',
+  title: "Diego Morales' Engineering Projects",
+  engineerName: 'Diego Morales',
   bioSummary:
     'A passionate engineer who builds things across software, hardware, and everything in between.',
   contact: {
